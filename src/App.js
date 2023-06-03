@@ -591,7 +591,7 @@ function NeoTool() {
 
   return (
     <div>
-      <h2>NeoTool</h2>
+      <h2>NICUCARECALCULATOR</h2>
       <form>
       <div>
     <label>Birth Gestational Age:</label>
