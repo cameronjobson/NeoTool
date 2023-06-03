@@ -561,7 +561,7 @@ function NeoTool() {
   calculatedTexts.push(calculatePostMenstrualExamDate(dob, gestAge, remainingGestAgeDays));
   calculatedTexts.push(printText("ECI if SGA, (ECI/Nest if meet criteria)"));
 
-} else if (weight > 1800 && weight <= 2200 && totalGestAgeDays > 230) {
+} else if (weight > 2000 && weight <= 2200 && totalGestAgeDays > 230) {
   calculatedTexts.push(calculateTreatmentDate(dob, gestAge, remainingGestAgeDays, 35, "<35w:DEBM stop at 1500g or max 7d:"));
   calculatedTexts.push(printText(">=35+0w:DEBM stop after max 7d"));
   calculatedTexts.push(printText("HMF/PTF until 3.5kg then D/C feeds"));
