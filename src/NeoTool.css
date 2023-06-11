@@ -13,4 +13,26 @@
   .input-group input {
     flex-grow: 1;
   }
-  
+  .input-small {
+    width: 50px;
+}
+.container {
+  padding: 20px;
+}
+
+.disclaimer {
+  margin: 10px;
+  padding: 10px;
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.past-date {
+  color: red;
+}
+
+.current-date {
+  color: green;
+}
