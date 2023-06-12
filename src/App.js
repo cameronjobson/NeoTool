@@ -61,8 +61,36 @@ function NeoTool() {
       postMenstrualAge = 35;
     } else if (gestAge >= 32 && gestAge < 33) {
       postMenstrualAge = 36;
+    } else if (gestAge >= 33 && gestAge < 34) {
+      postMenstrualAge = 37;
+    } else if (gestAge >= 34 && gestAge < 35) {
+      postMenstrualAge = 38;
+    } else if (gestAge >= 35 && gestAge < 36) {
+      postMenstrualAge = 39;
+    } else if (gestAge >= 36 && gestAge < 37) {
+      postMenstrualAge = 40;
+    } else if (gestAge >= 37 && gestAge < 38) {
+      postMenstrualAge = 41;
+    } else if (gestAge >= 38 && gestAge < 39) {
+      postMenstrualAge = 42;
+    } else if (gestAge >= 39 && gestAge < 40) {
+      postMenstrualAge = 43;
+    } else if (gestAge >= 40 && gestAge < 41) {
+      postMenstrualAge = 44;
+    } else if (gestAge >= 41 && gestAge < 42) {
+      postMenstrualAge = 45;
+    } else if (gestAge >= 42 && gestAge < 43) {
+      postMenstrualAge = 46;
+    } else if (gestAge >= 43 && gestAge < 44) {
+      postMenstrualAge = 47;
+    } else if (gestAge >= 44 && gestAge < 45) {
+      postMenstrualAge = 48;
+    } else if (gestAge >= 45 && gestAge < 46) {
+      postMenstrualAge = 49;
+    } else if (gestAge >= 46 && gestAge < 47) {
+      postMenstrualAge = 50;
     } else {
-      postMenstrualAge = 36;
+      postMenstrualAge = 50;
     }
   
     let totalGestAgeInDays = gestAge * 7 + parseInt(remainingGestAgeDays);
@@ -652,8 +680,7 @@ const printText = (text) => {
   calculatedTexts.push(calculateTreatmentDate(dob, gestAge, remainingGestAgeDays, 35, "<b>Probiotics</b> stop at 35w:"));
   calculatedTexts.push(addDaysToDOB(dob, 14, "<b>VitD/Fe</b> at full feed and ≥14dol"));
   calculatedTexts.push(printText("<b>Vit K</b> 1mg IM"));
-  calculatedTexts.push(printText("ROP EXAM ONLY NESSESSARY IF UNSTABLE"));
-  calculatedTexts.push(calculatePostMenstrualExamDate(dob, gestAge, remainingGestAgeDays));
+  calculatedTexts.push(addDaysToDOB(dob, 28, "<b>ROP Exam</b> IF UNSTABLE @ 4w of age"));
   calculatedTexts.push(printText("<b>ECHO:</b>"));
   calculatedTexts.push(calculateTreatmentDate(dob, gestAge, remainingGestAgeDays, 36, "&nbsp;&nbsp;&nbsp;@36w if on resp supp:"));
   calculatedTexts.push(addDaysToDOB(dob, 28, "<b>Synagis</b> if O2 at least 28d after birth"));
@@ -667,8 +694,7 @@ const printText = (text) => {
   calculatedTexts.push(calculateTreatmentDate(dob, gestAge, remainingGestAgeDays, 35, "<b>Probiotics</b> stop at 35w:"));
   calculatedTexts.push(addDaysToDOB(dob, 14, "<b>VitD/Fe</b> at full feed and ≥14dol"));
   calculatedTexts.push(printText("<b>Vit K</b> 1mg IM"));
-  calculatedTexts.push(printText("ROP EXAM ONLY NESSESSARY IF UNSTABLE"));
-  calculatedTexts.push(calculatePostMenstrualExamDate(dob, gestAge, remainingGestAgeDays));
+  calculatedTexts.push(addDaysToDOB(dob, 28, "<b>ROP Exam</b> IF UNSTABLE @ 4w of age"));
   calculatedTexts.push(printText("<b>ECHO:</b>"));
   calculatedTexts.push(calculateTreatmentDate(dob, gestAge, remainingGestAgeDays, 36, "&nbsp;&nbsp;&nbsp;@36w if on resp supp:"));
   calculatedTexts.push(addDaysToDOB(dob, 28, "<b>Synagis</b> if O2 at least 28d after birth"));
@@ -682,8 +708,7 @@ const printText = (text) => {
   calculatedTexts.push(calculateTreatmentDate(dob, gestAge, remainingGestAgeDays, 35, "<b>Probiotics</b> stop at 35w:"));
   calculatedTexts.push(addDaysToDOB(dob, 14, "<b>VitD/Fe</b> at full feed and ≥14dol"));
   calculatedTexts.push(printText("<b>Vit K</b> 1mg IM"));
-  calculatedTexts.push(printText("ROP EXAM ONLY NESSESSARY IF UNSTABLE"));
-  calculatedTexts.push(calculatePostMenstrualExamDate(dob, gestAge, remainingGestAgeDays));
+  calculatedTexts.push(addDaysToDOB(dob, 28, "<b>ROP Exam</b> IF UNSTABLE @ 4w of age"));
   calculatedTexts.push(printText("<b>ECHO:</b>"));
   calculatedTexts.push(calculateTreatmentDate(dob, gestAge, remainingGestAgeDays, 36, "&nbsp;&nbsp;&nbsp;@36w if on resp supp:"));
   calculatedTexts.push(addDaysToDOB(dob, 28, "<b>Synagis</b> if O2 at least 28d after birth"));
@@ -724,8 +749,7 @@ const printText = (text) => {
   calculatedTexts.push(calculateTreatmentDate(dob, gestAge, remainingGestAgeDays, 35, "<b>DEBM</b> stop at 35w:"));
   calculatedTexts.push(printText("<b>HMF/PTF</b> until 3.5kg then D/C feeds"));
   calculatedTexts.push(addDaysToDOB(dob, 14, "<b>VitD/Fe</b> at full feed and ≥14dol:"));
-  calculatedTexts.push(printText("<b>Vit K</b> 1mg IM"));
-  calculatedTexts.push(printText("ROP EXAM ONLY NECESSARY IF UNSTABLE"));
+  calculatedTexts.push(addDaysToDOB(dob, 28, "<b>ROP Exam</b> IF UNSTABLE @ 4w of age"));
   calculatedTexts.push(calculatePostMenstrualExamDate(dob, gestAge, remainingGestAgeDays));
   calculatedTexts.push(printText("<b>ECHO:</b>"));
   calculatedTexts.push(calculateTreatmentDate(dob, gestAge, remainingGestAgeDays, 36, "&nbsp;&nbsp;&nbsp;<b>@36w</b> ONLY IF 32+0w & on resp supp:"));
@@ -738,8 +762,7 @@ const printText = (text) => {
   calculatedTexts.push(printText("<b>HMF/PTF</b> until 3.5kg then D/C feeds"));
   calculatedTexts.push(addDaysToDOB(dob, 14, "<b>VitD/Fe</b> at full feed and ≥14dol:"));
   calculatedTexts.push(printText("<b>Vit K</b> 1mg IM"));
-  calculatedTexts.push(printText("ROP EXAM ONLY NECESSARY IF UNSTABLE"));
-  calculatedTexts.push(calculatePostMenstrualExamDate(dob, gestAge, remainingGestAgeDays));
+  calculatedTexts.push(addDaysToDOB(dob, 28, "<b>ROP Exam</b> IF UNSTABLE @ 4w of age"));
   calculatedTexts.push(printText("<b>ECHO:</b>"));
   calculatedTexts.push(calculateTreatmentDate(dob, gestAge, remainingGestAgeDays, 36, "&nbsp;&nbsp;&nbsp;<b>@36w</b> ONLY IF 32+0w & on resp supp:"));
   calculatedTexts.push(printText("<b>NEST</b> f/u Tier 2"));
@@ -751,8 +774,7 @@ const printText = (text) => {
   calculatedTexts.push(printText("<b>HMF/PTF</b> until 3.5kg then D/C feeds"));
   calculatedTexts.push(addDaysToDOB(dob, 14, "<b>VitD/Fe</b> at full feed and ≥14dol:"));
   calculatedTexts.push(printText("<b>Vit K</b> 1mg IM"));
-  calculatedTexts.push(printText("ROP EXAM ONLY NESSESSARY IF UNSTABLE"));
-  calculatedTexts.push(calculatePostMenstrualExamDate(dob, gestAge, remainingGestAgeDays));
+  calculatedTexts.push(addDaysToDOB(dob, 28, "<b>ROP Exam</b> IF UNSTABLE @ 4w of age"));
   calculatedTexts.push(printText("<b>ECHO:</b>"));
   calculatedTexts.push(calculateTreatmentDate(dob, gestAge, remainingGestAgeDays, 36, "&nbsp;&nbsp;&nbsp;@36w ONLY IF 32+0w & on resp supp:"));
   calculatedTexts.push(printText("<b>NEST</b> f/u Tier 2"));
@@ -789,8 +811,7 @@ const printText = (text) => {
   calculatedTexts.push(printText("<b>HMF/PTF</b> until 3.5kg then D/C feeds"));
   calculatedTexts.push(addDaysToDOB(dob, 14, "<b>VitD/Fe</b> at full feed and ≥14dol:"));
   calculatedTexts.push(printText("<b>Vit K</b> 1mg IM"));
-  calculatedTexts.push(printText("ROP EXAM ONLY NESSESSARY IF UNSTABLE"));
-  calculatedTexts.push(calculatePostMenstrualExamDate(dob, gestAge, remainingGestAgeDays));
+  calculatedTexts.push(addDaysToDOB(dob, 28, "<b>ROP Exam</b> IF UNSTABLE @ 4w of age"));
   calculatedTexts.push(printText("<b>ECI</b>  (Nest if meet criteria)"));
   calculatedTexts.push(addDaysToDOB(dob, 30, "<b>Hep B Vac</b> @30 days"));
 
@@ -799,8 +820,7 @@ const printText = (text) => {
   calculatedTexts.push(printText("<b>HMF/PTF</b> until 3.5kg then D/C feeds"));
   calculatedTexts.push(addDaysToDOB(dob, 14, "<b>VitD/Fe</b> at full feed and ≥14dol:"));
   calculatedTexts.push(printText("<b>Vit K</b> 1mg IM"));
-  calculatedTexts.push(printText("ROP EXAM ONLY NESSESSARY IF UNSTABLE"));
-  calculatedTexts.push(calculatePostMenstrualExamDate(dob, gestAge, remainingGestAgeDays));
+  calculatedTexts.push(addDaysToDOB(dob, 28, "<b>ROP Exam</b> IF UNSTABLE @ 4w of age"));
   calculatedTexts.push(printText("<b>ECI</b> if SGA, (ECI/Nest if meet criteria)"));
   calculatedTexts.push(addDaysToDOB(dob, 30, "<b>Hep B Vac</b> @30 days"));
 
@@ -840,8 +860,7 @@ const printText = (text) => {
   calculatedTexts.push(printText("<b>HMF/PTF</b> until 3.5kg then D/C feeds"));
   calculatedTexts.push(addDaysToDOB(dob, 14, "<b>VitD/Fe</b> at full feed and ≥14dol:"));
   calculatedTexts.push(printText("<b>Vit K</b> 1mg IM"));
-  calculatedTexts.push(printText("ROP EXAM ONLY NESSESSARY IF UNSTABLE"));
-  calculatedTexts.push(calculatePostMenstrualExamDate(dob, gestAge, remainingGestAgeDays));
+  calculatedTexts.push(addDaysToDOB(dob, 28, "<b>ROP Exam</b> IF UNSTABLE @ 4w of age"));
   calculatedTexts.push(printText("<b>ECI</b>  (Nest if meet criteria)"));
   calculatedTexts.push(addDaysToDOB(dob, 30, "<b>Hep B Vac</b> @30 days"));
 
@@ -850,8 +869,7 @@ const printText = (text) => {
   calculatedTexts.push(printText("<b>HMF/PTF</b> until 3.5kg then D/C feeds"));
   calculatedTexts.push(addDaysToDOB(dob, 14, "<b>VitD/Fe</b> at full feed and ≥14dol:"));
   calculatedTexts.push(printText("<b>Vit K</b> 1mg IM"));
-  calculatedTexts.push(printText("ROP EXAM ONLY NESSESSARY IF UNSTABLE"));
-  calculatedTexts.push(calculatePostMenstrualExamDate(dob, gestAge, remainingGestAgeDays));
+  calculatedTexts.push(addDaysToDOB(dob, 28, "<b>ROP Exam</b> IF UNSTABLE @ 4w of age"));
   calculatedTexts.push(printText("<b>ECI</b> if SGA, (ECI/Nest if meet criteria)"));
   calculatedTexts.push(addDaysToDOB(dob, 30, "<b>Hep B Vac</b> @30 days"));
 
@@ -861,6 +879,8 @@ const printText = (text) => {
   calculatedTexts.push(addDaysToDOB(dob, 14, "<b>VitD/Fe</b> at full feed and ≥14dol:"));
   calculatedTexts.push(printText("<b>Vit K</b> 1mg IM"));
   calculatedTexts.push(printText("<b>ECI</b> if SGA, (ECI/Nest if meet criteria)"));
+
+  //END OF ROW 7
 
 } else if (weight > 2200 && weight <= 9999 && totalGestAgeDays > 230 && totalGestAgeDays <= 301) {
   calculatedTexts.push(addDaysToDOB(dob, 7, "<b>DEBM</b> stop at max 7d:"));
