@@ -786,7 +786,6 @@ const printText = (text) => {
   calculatedTexts.push(calculateTreatmentDate(dob, gestAge, remainingGestAgeDays, 35, "<b>DEBM</b> stop at 1500g+35w:"));
   calculatedTexts.push(printText("<b>Prolacta</b> stop at 1500g"));
   calculatedTexts.push(calculateTreatmentDate(dob, gestAge, remainingGestAgeDays, 35, "<b>Probiotics</b> stop at 1500g+35w:"));
-  calculatedTexts.push(printText("<b>Probiotics</b> stop at 1500g"));
   calculatedTexts.push(addDaysToDOB(dob, 14, "<b>MVI/Fe</b> at full feed and ≥14dol:"));
   calculatedTexts.push(printText("<b>Vit K</b> 0.3-0.5mg/kg IM"));
   calculatedTexts.push(calculatePostMenstrualExamDate(dob, gestAge, remainingGestAgeDays));
@@ -806,7 +805,7 @@ const printText = (text) => {
   calculatedTexts.push(printText("<b>NEST</b> f/u Tier 2"));
   calculatedTexts.push(addDaysToDOB(dob, 30, "<b>Hep B Vac</b> @30 days"));
 
-} else if (weight > 1500 && weight <= 18000 && totalGestAgeDays > 230 && totalGestAgeDays < 245) {
+} else if (weight > 1500 && weight <= 1800 && totalGestAgeDays > 230 && totalGestAgeDays < 245) {
   calculatedTexts.push(addDaysToDOB(dob, 7, "<b>DEBM</b> stop at 1500g or max 7d:"));
   calculatedTexts.push(printText("<b>HMF/PTF</b> until 3.5kg then D/C feeds"));
   calculatedTexts.push(addDaysToDOB(dob, 14, "<b>VitD/Fe</b> at full feed and ≥14dol:"));
