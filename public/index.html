@@ -1,24 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="utf-8" />
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="Web site created using create-react-app"
-    />
+    <meta name="description" content="Web site created using create-react-app" />
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
 
-    <!-- Add this line to include the 'Open Sans' font -->
+    <!-- Google Font 'Open Sans' -->
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
 
-    <title>React App</title>
-  </head>
-  <body>
+    <!-- Link to the NeoTool.css stylesheet -->
+    <link rel="stylesheet" type="text/css" href="src/NeoTool.css">
+
+    <title>Medical Website</title>
+</head>
+
+<body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
-  </body>
+
+    <div id="root">
+        <!-- Example form -->
+        <div class="container">
+
+            <!-- Example Input Group -->
+            <div class="input-group">
+                <label for="first-name">First Name:</label>
+                <input type="text" id="first-name" class="input-small" placeholder="First Name">
+            </div>
+
+            <div class="input-group">
+                <label for="last-name">Last Name:</label>
+                <input type="text" id="last-name" class="input-small" placeholder="Last Name">
+            </div>
+
+            <!-- DOB Input (full-width) -->
+            <div class="input-group">
+                <label for="dob">Date of Birth:</label>
+                <input type="date" id="dob" placeholder="Date of Birth">
+            </div>
+
+            <!-- Disclaimer -->
+            <div class="disclaimer">
+                <p>Please ensure that the information provided is accurate and complete.</p>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit">Submit</button>
+        </div>
+    </div>
+
+</body>
+
 </html>
