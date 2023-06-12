@@ -1,4 +1,4 @@
-/* General */
+/* General Styles */
 body, html {
   margin: 0;
   padding: 0;
@@ -54,48 +54,28 @@ body, html {
 
 /* Disclaimer */
 .disclaimer {
-  margin: 30px 0;
-  padding: 28px;
-  background-color: #f7fafc;
-  border-left: 5px solid #47a2f9;
-  border-radius: 10px;
-  font-size: 15px;
-  line-height: 1.6;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.03);
+  margin: 24px 0;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 14px;
 }
 
-/* Past and Current Date */
-.past-date {
-  color: #e8413e;
-  font-weight: 600;
-}
-
-.current-date {
-  color: #28a745;
-  font-weight: 600;
-}
-
-/* Buttons */
+/* Submit Button */
 button {
-  padding: 14px 26px;
-  background-color: #47a2f9;
+  display: inline-block;
+  padding: 12px 24px;
+  background-color: #4c9aff;
   color: #ffffff;
+  font-weight: 600;
+  text-align: center;
   border: none;
   border-radius: 8px;
-  font-size: 16px;
-  font-weight: 600;
   cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.3s ease;
+  transition: background-color 0.3s ease;
 }
 
 button:hover {
-  background-color: #357abD;
-  transform: scale(1.05);
-}
-
-/* Responsive */
-@media screen and (max-width: 768px) {
-  .container {
-      padding: 30px;
-  }
+  background-color: #357ab8;
 }
