@@ -49,7 +49,7 @@ body, html {
 
 /* Small Input */
 .input-small {
-  width: 60px;
+  width: 120px;
 }
 
 /* Disclaimer */
@@ -78,4 +78,13 @@ button {
 
 button:hover {
   background-color: #357ab8;
+}
+
+/* Date Colors */
+.past-date {
+  color: red;
+}
+
+.current-date {
+  color: green;
 }
