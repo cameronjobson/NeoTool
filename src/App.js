@@ -130,7 +130,7 @@ function NeoTool() {
     today.setHours(0, 0, 0, 0);
   
     // Helper function to format dates and color code them
-    const formatAndColorCodeDate = (date) => {
+    const formatAndColorCodeDate = (date, prefixText) => {
       let formattedDate = (date.getUTCMonth() + 1).toString().padStart(2, '0') + '-'
                         + date.getUTCDate().toString().padStart(2, '0') + '-'
                         + date.getUTCFullYear();
@@ -144,30 +144,31 @@ function NeoTool() {
         color = 'black';
       }
   
-      return `<span style="color: ${color};">${formattedDate}</span>`;
+      return `<span style="color: ${color};">${prefixText} ${formattedDate}</span>`;
     }
   
     // First HUS date after 7 days
     let firstHusDate = new Date(dobDate);
     firstHusDate.setUTCDate(dobDate.getUTCDate() + 7);
-    husDates.push(`&nbsp;&nbsp;First HUS date @ 7 days: ${formatAndColorCodeDate(firstHusDate)}`);
+    husDates.push(formatAndColorCodeDate(firstHusDate, '&nbsp;&nbsp;First HUS date @ 7 days:'));
   
     // Second HUS date after 28 days
     let secondHusDate = new Date(dobDate);
     secondHusDate.setUTCDate(dobDate.getUTCDate() + 28);
-    husDates.push(`&nbsp;&nbsp;Second HUS date @ 28 days: ${formatAndColorCodeDate(secondHusDate)}`);
+    husDates.push(formatAndColorCodeDate(secondHusDate, '&nbsp;&nbsp;Second HUS date @ 28 days:'));
   
     // Third HUS date after 40 weeks
     let totalGestAgeInDays = gestAge * 7 + parseInt(remainingGestAgeDays);
     let thirdHusDate = new Date(dobDate);
     thirdHusDate.setUTCDate(dobDate.getUTCDate() - totalGestAgeInDays + 40 * 7);
-    husDates.push(`&nbsp;&nbsp;Third HUS date @ 40 weeks: ${formatAndColorCodeDate(thirdHusDate)}`);
+    husDates.push(formatAndColorCodeDate(thirdHusDate, '&nbsp;&nbsp;Third HUS date @ 40 weeks:'));
   
     // Add a prefix to the array for the bold "HUS"
     husDates.unshift('<b>HUS:</b>');
   
     return husDates;
   };
+  
   
 
   
@@ -196,15 +197,15 @@ function NeoTool() {
       color = 'black';
     }
 
-    return `${prefixText} <span style="color: ${color};">${newDateFormatted}</span>`;
+    // Wrapping both prefix text and date in a span and applying the color styling to it
+    return `<span style="color: ${color};">${prefixText} ${newDateFormatted}</span>`;
 };
 
 const printText = (text) => {
     return text;
 };
 
-  
-  
+
 
   const submitData = () => {
     if (gestAge && remainingGestAgeDays && dob && weight) {
@@ -541,7 +542,7 @@ const printText = (text) => {
 
 } else if (weight > 0 && weight <= 1250 && totalGestAgeDays > 202 && totalGestAgeDays <= 216) {
   calculatedTexts.push(calculateTreatmentDate(dob, gestAge, remainingGestAgeDays, 35, "<b>DEBM</b> stop at 1500g+35w:"));
-  calculatedTexts.push(calculateTreatmentDate(dob, gestAge, remainingGestAgeDays, 33, "<b>Prolactin</b> stop at 1500g+33w:"));
+  calculatedTexts.push(calculateTreatmentDate(dob, gestAge, remainingGestAgeDays, 33, "<b>Prolacta</b> stop at 1500g+33w:"));
   calculatedTexts.push(calculateTreatmentDate(dob, gestAge, remainingGestAgeDays, 35, "<b>Probiotics</b> stop at 1500g+35w:"));
   calculatedTexts.push(addDaysToDOB(dob, 14, "<b>MVI/Fe</b> at full feed and ≥14dol:"));
   calculatedTexts.push(printText("<b>Vit K</b> 0.3-0.5mg/kg IM"));
@@ -647,7 +648,7 @@ const printText = (text) => {
 
 } else if (weight > 0 && weight <= 1250 && totalGestAgeDays > 216 && totalGestAgeDays <= 223) {
   calculatedTexts.push(calculateTreatmentDate(dob, gestAge, remainingGestAgeDays, 35, "<b>DEBM</b> stop at 1500g+35w:"));
-  calculatedTexts.push(calculateTreatmentDate(dob, gestAge, remainingGestAgeDays, 33, "<b>prolactin</b> stop at 1500g+33w:"));
+  calculatedTexts.push(calculateTreatmentDate(dob, gestAge, remainingGestAgeDays, 33, "<b>prolacta</b> stop at 1500g+33w:"));
   calculatedTexts.push(calculateTreatmentDate(dob, gestAge, remainingGestAgeDays, 35, "<b>Probiotics</b> stop at 1500g+35w:"));
   calculatedTexts.push(addDaysToDOB(dob, 14, "<b>MVI/Fe</b> at full feed and ≥14dol:"));
   calculatedTexts.push(printText("<b>Vit K</b> 0.3-0.5mg/kg IM"));
