@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './NeoTool.css'; // make sure to import the CSS file
+import '../public/NeoTool.css';
 
 
 function NeoTool() {
