@@ -896,11 +896,37 @@ const printText = (text) => {
       }
   
       // Join all calculated texts into a single string separated by '<br />' and set the treatment text
-      setTreatmentText(calculatedTexts.join('<br />'));
+      let finalTreatmentText = calculatedTexts.join('<br />');
+      setTreatmentText(finalTreatmentText);
+
+      // Prepare the data to send
+      let dataToSend = {
+        userInputs: {
+          gestAge,
+          remainingGestAgeDays,
+          dob,
+          weight,
+        },
+        treatmentText: finalTreatmentText,
+      };
+
+      // Send the data to your Express server
+      fetch('/send-email', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ data: dataToSend }),
+      })
+      .then(response => response.json())
+      .then(data => console.log(data))
+      .catch((error) => {
+        console.error('Error:', error);
+      });
     } else {
       alert("Please fill out all the fields.");
     }
-  };
+};
 
   
   return (
