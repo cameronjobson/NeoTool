@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import './NeoTool.css';
-
+import './NeoTool.css'; // make sure to import the CSS file
 
 
 function NeoTool() {
@@ -126,49 +125,54 @@ function NeoTool() {
   const calculateHUSDates = (dob, gestAge, remainingGestAgeDays) => {
     let dobDate = new Date(dob);
     let husDates = [];
-  
-    let today = new Date();
-    today.setHours(0, 0, 0, 0);
-  
-    // Helper function to format dates and color code them
-    const formatAndColorCodeDate = (date, prefixText) => {
-      let formattedDate = (date.getUTCMonth() + 1).toString().padStart(2, '0') + '-'
-                        + date.getUTCDate().toString().padStart(2, '0') + '-'
-                        + date.getUTCFullYear();
-  
-      let color;
-      if (date < today) {
-        color = 'red';
-      } else if (date.getTime() === today.getTime()) {
-        color = 'green';
-      } else {
-        color = 'black';
-      }
-  
-      return `<span style="color: ${color};">${prefixText} ${formattedDate}</span>`;
+
+    // Get the current date without time for comparison
+    let currentDate = new Date();
+    currentDate.setHours(0, 0, 0, 0);
+
+    // Helper function to format dates and apply CSS classes
+    const formatAndApplyCssClass = (date, prefixText) => {
+        let formattedDate = (date.getUTCMonth() + 1).toString().padStart(2, '0') + '-'
+                            + date.getUTCDate().toString().padStart(2, '0') + '-'
+                            + date.getUTCFullYear();
+
+        // Convert date to a local date (without time) for comparison
+        let localDate = new Date(date.getUTCFullYear(), date.getUTCMonth(), date.getUTCDate());
+
+        // Determine the CSS class for the date text
+        let cssClass = '';
+        if (localDate < currentDate) {
+            cssClass = 'past-date';
+        } else if (localDate.getTime() === currentDate.getTime()) {
+            cssClass = 'current-date';
+        }
+
+        // Return the date wrapped in HTML with the relevant CSS class.
+        return `<span class="${cssClass}">${prefixText} ${formattedDate}</span>`;
     }
-  
+
     // First HUS date after 7 days
     let firstHusDate = new Date(dobDate);
     firstHusDate.setUTCDate(dobDate.getUTCDate() + 7);
-    husDates.push(formatAndColorCodeDate(firstHusDate, '&nbsp;&nbsp;First HUS date @ 7 days:'));
-  
+    husDates.push(formatAndApplyCssClass(firstHusDate, '&nbsp;&nbsp;First HUS date @ 7 days:'));
+
     // Second HUS date after 28 days
     let secondHusDate = new Date(dobDate);
     secondHusDate.setUTCDate(dobDate.getUTCDate() + 28);
-    husDates.push(formatAndColorCodeDate(secondHusDate, '&nbsp;&nbsp;Second HUS date @ 28 days:'));
-  
+    husDates.push(formatAndApplyCssClass(secondHusDate, '&nbsp;&nbsp;Second HUS date @ 28 days:'));
+
     // Third HUS date after 40 weeks
     let totalGestAgeInDays = gestAge * 7 + parseInt(remainingGestAgeDays);
     let thirdHusDate = new Date(dobDate);
     thirdHusDate.setUTCDate(dobDate.getUTCDate() - totalGestAgeInDays + 40 * 7);
-    husDates.push(formatAndColorCodeDate(thirdHusDate, '&nbsp;&nbsp;Third HUS date @ 40 weeks:'));
-  
+    husDates.push(formatAndApplyCssClass(thirdHusDate, '&nbsp;&nbsp;Third HUS date @ 40 weeks:'));
+
     // Add a prefix to the array for the bold "HUS"
     husDates.unshift('<b>HUS:</b>');
-  
+
     return husDates;
-  };
+};
+
   
   
 
@@ -965,3 +969,4 @@ const printText = (text) => {
 }
 
 export default NeoTool;
+
