@@ -916,29 +916,19 @@ const printText = (text) => {
       };
 
       // Send the data to your Express server
-fetch('/send-email', {
+fetch('https://nicucalcrecords.herokuapp.com/send-email', {
     method: 'POST',
     headers: {
-        'Content-Type': 'application/json',
+      'Content-Type': 'application/json',
     },
     body: JSON.stringify({ data: dataToSend }),
-})
-.then(response => {
-    // Check if the response is OK (status code in the range 200-299)
-    if (!response.ok) {
-        return response.text().then(text => {
-            throw new Error(`Server responded with status ${response.status}: ${text}`);
-        });
-    }
-    // Parse response as JSON if everything is OK
-    return response.json();
-})
-.then(data => {
-    console.log(data);
-})
-.catch((error) => {
+  })
+  .then(response => response.json())
+  .then(data => console.log(data))
+  .catch((error) => {
     console.error('Error:', error);
-});
+  });
+
 
     } else {
       alert("Please fill out all the fields.");
