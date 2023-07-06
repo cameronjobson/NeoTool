@@ -8,6 +8,7 @@ function NeoTool() {
   const [remainingGestAgeDays, setRemainingGestAgeDays] = useState();
   const [dob, setDob] = useState();
   const [weight, setWeight] = useState();
+  const [showTreatment, setShowTreatment] = useState(false);
 
   const calculateTreatmentDate = (dob, gestAge, remainingGestAgeDays, weeksToAdd, prefixText) => {
     let dobDate = new Date(dob);
@@ -242,7 +243,7 @@ const printText = (text) => {
 
       } else if (weight > 0 && weight <= 1250 && totalGestAgeDays > 153 && totalGestAgeDays <= 167) {
         calculatedTexts.push(calculateTreatmentDate(dob, gestAge, remainingGestAgeDays, 35, "<b>DEBM</b> stop at 1500g+35w:"));
-        calculatedTexts.push(calculateTreatmentDate(dob, gestAge, remainingGestAgeDays, 33, "<b>Prolacta</b> stop at 1500g+33w:"));
+        calculatedTexts.push(printText("<b>HMF/PTF</b> until 3.5kg then D/C feeds"));
         calculatedTexts.push(calculateTreatmentDate(dob, gestAge, remainingGestAgeDays, 35, "<b>Probiotics</b> stop at 1500g+35w:"));
         calculatedTexts.push(addDaysToDOB(dob, 14, "<b>VitD/Fe</b> at full feed and ≥14dol:"));
         calculatedTexts.push(printText("<b>Vit K</b> 0.3mg IV q72h x4 doses"));
@@ -264,7 +265,7 @@ const printText = (text) => {
 
       } else if (weight > 1250 && weight <= 1500 && totalGestAgeDays > 153 && totalGestAgeDays <= 167) {
         calculatedTexts.push(calculateTreatmentDate(dob, gestAge, remainingGestAgeDays, 35, "<b>DEBM</b> stop at 1500g+35w:"));
-        calculatedTexts.push(calculateTreatmentDate(dob, gestAge, remainingGestAgeDays, 33, "<b>Prolacta</b> stop at 1500g+33w:"));
+        calculatedTexts.push(printText("<b>HMF/PTF</b> until 3.5kg then D/C feeds"));
         calculatedTexts.push(calculateTreatmentDate(dob, gestAge, remainingGestAgeDays, 35, "<b>Probiotics</b> stop at 1500g+35w:"));
         calculatedTexts.push(addDaysToDOB(dob, 14, "<b>VitD/Fe</b> at full feed and ≥14dol:"));
         calculatedTexts.push(printText("<b>Vit K</b> 0.3-0.5mg/kg IM, 1mg if 1500g"));
@@ -285,7 +286,7 @@ const printText = (text) => {
         
       } else if (weight > 1500 && weight <= 1800 && totalGestAgeDays > 153 && totalGestAgeDays <= 167) {
         calculatedTexts.push(calculateTreatmentDate(dob, gestAge, remainingGestAgeDays, 35, "<b>DEBM</b> stop at 35w:"));
-        calculatedTexts.push(calculateTreatmentDate(dob, gestAge, remainingGestAgeDays, 33, "<b>Prolacta</b> stop at 1500g+33w:"));
+        calculatedTexts.push(printText("<b>HMF/PTF</b> until 3.5kg then D/C feeds"));
         calculatedTexts.push(calculateTreatmentDate(dob, gestAge, remainingGestAgeDays, 35, "<b>Probiotics</b> stop at 35w:"));
         calculatedTexts.push(addDaysToDOB(dob, 14, "<b>VitD/Fe</b> at full feed and ≥14dol:"));
         calculatedTexts.push(printText("<b>Vit K</b> 1mg IM"));
@@ -307,7 +308,7 @@ const printText = (text) => {
 
       } else if (weight > 1800 && weight <= 2000 && totalGestAgeDays > 153 && totalGestAgeDays <= 167) {
         calculatedTexts.push(calculateTreatmentDate(dob, gestAge, remainingGestAgeDays, 35, "<b>DEBM</b> stop at 35w:"));
-       calculatedTexts.push(calculateTreatmentDate(dob, gestAge, remainingGestAgeDays, 33, "<b>Prolacta</b> stop at 1500g+33w:"));
+        calculatedTexts.push(printText("<b>HMF/PTF</b> until 3.5kg then D/C feeds"));
         calculatedTexts.push(calculateTreatmentDate(dob, gestAge, remainingGestAgeDays, 35, "<b>Probiotics</b> stop at 35w:"));
         calculatedTexts.push(addDaysToDOB(dob, 14, "<b>VitD/Fe</b> at full feed and ≥14dol:"));
         calculatedTexts.push(printText("<b>Vit K</b> 1mg IM"));
@@ -329,7 +330,7 @@ const printText = (text) => {
 
       } else if (weight > 2000 && weight <= 2200 && totalGestAgeDays > 153 && totalGestAgeDays <= 167) {
         calculatedTexts.push(calculateTreatmentDate(dob, gestAge, remainingGestAgeDays, 35, "<b>DEBM</b> stop at 35w:"));
-        calculatedTexts.push(calculateTreatmentDate(dob, gestAge, remainingGestAgeDays, 33, "<b>Prolacta</b> stop at 1500g+33w:"));
+        calculatedTexts.push(printText("<b>HMF/PTF</b> until 3.5kg then D/C feeds"));
         calculatedTexts.push(calculateTreatmentDate(dob, gestAge, remainingGestAgeDays, 35, "<b>Probiotics</b> stop at 35w:"));
         calculatedTexts.push(addDaysToDOB(dob, 14, "<b>VitD/Fe</b> at full feed and ≥14dol:"));
         calculatedTexts.push(printText("<b>Vit K</b> 1mg IM"));
@@ -903,6 +904,7 @@ const printText = (text) => {
       // Join all calculated texts into a single string separated by '<br />' and set the treatment text
       let finalTreatmentText = calculatedTexts.join('<br />');
       setTreatmentText(finalTreatmentText);
+      setShowTreatment(true);
 
       // Prepare the data to send
       let dataToSend = {
@@ -916,53 +918,70 @@ const printText = (text) => {
       };
 
       // Send the data to your Express server
-fetch('https://nicucalcrecords.herokuapp.com/send-email', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({ data: dataToSend }),
-  })
-  .then(response => response.json())
-  .then(data => console.log(data))
-  .catch((error) => {
-    console.error('Error:', error);
-  });
-
-
+      fetch('/send-email', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ data: dataToSend }),
+      })
+      .then(response => response.json())
+      .then(data => console.log(data))
+      .catch((error) => {
+        console.error('Error:', error);
+      });
     } else {
       alert("Please fill out all the fields.");
     }
 };
 
-  
-  return (
-    <div className="container">
-      <h1>NICU CARE CALCULATOR </h1>
-      <h2>(PDX Fort Worth) </h2>
-      <form>
-        <div>
-          <label>Birth Gestational Age:</label>
-          <br/>
-          <input className="input-small" type="number" onChange={(e) => setGestAge(e.target.value)} />w
-          <input className="input-small" type="number" onChange={(e) => setRemainingGestAgeDays(e.target.value)} />d
+return (
+  <div className="container">
+    <h1 className="header">NICU CARE CALCULATOR</h1>
+    <h2 className="sub-header">(PDX Fort Worth)</h2>
+    <form>
+      <div className="input-group">
+        <label>Birth Gestational Age:</label>
+        <div className="input-row">
+          <div className="input-with-unit">
+            <input className="input-small" placeholder="Weeks" type="number" onChange={(e) => setGestAge(e.target.value)} />
+            <span className="unit">w</span>
+          </div>
+          <div className="input-with-unit">
+            <input className="input-small" placeholder="Days" type="number" onChange={(e) => setRemainingGestAgeDays(e.target.value)} />
+            <span className="unit">d</span>
+          </div>
         </div>
-        <div>
-          <label>DOB: </label>
-          <input type="date" onChange={(e) => setDob(e.target.value)} />
-        </div>
-        <div>
-          <label>Birth weight: </label>
-          <input className="input-small" type="number" onChange={(e) => setWeight(e.target.value)} /> g
-        </div>
-        <button type="button" onClick={submitData}>Submit</button>
-      </form>
-      <p dangerouslySetInnerHTML={{ __html: treatmentText }}></p>
-      <div className="disclaimer">
-        <p><strong>Disclaimer:</strong> The information and tools provided on this website are intended to support neonatologists in the management and care of newborns using the Pediatrix Fort Worth protocol. The calculations and treatment dates generated are based on the data provided and should be used as a guide only. It is imperative to recognize that each newborn is unique, and variations in clinical conditions and response to treatments should be taken into consideration. All healthcare professionals are urged to exercise clinical judgment and refer to the relevant medical literature and guidelines in conjunction with using the information provided here. The creators and contributors of this website shall not be held liable for any inaccuracies, errors, or for any actions taken based on the information contained herein. Patient safety and appropriate care should always be the priority, and consultation with experienced colleagues or specialists is recommended when necessary. For any inquiries about creating a website specific to your practice, or to report a error/bug, please contact me at ca.jobson@yahoo.com or text me (817-319-8996).</p>
       </div>
+      <div className="input-group">
+        <label>DOB:</label>
+        <input className="input-medium" type="date" onChange={(e) => setDob(e.target.value)} />
+      </div>
+      <div className="input-group">
+        <label>Birth weight:</label>
+        <div className="input-with-unit">
+          <input className="input-medium" placeholder="Grams" type="number" onChange={(e) => setWeight(e.target.value)} />
+          <span className="unit">g</span>
+        </div>
+      </div>
+      <button type="button" className="submit-btn" onClick={submitData}>Submit</button>
+    </form>
+    {showTreatment && (
+      <div className="treatment-container">
+        <div className="treatment-bubble">
+          <p className="treatment-text" dangerouslySetInnerHTML={{ __html: treatmentText }}></p>
+        </div>
+      </div>
+    )}
+    <div className="disclaimer">
+      <p>
+        <strong>Disclaimer:</strong> The information and tools provided on this website are intended to support neonatologists in the management and care of newborns using the Pediatrix Fort Worth protocol. The calculations and treatment dates generated are based on the data provided and should be used as a guide only. It is imperative to recognize that each newborn is unique, and variations in clinical conditions and response to treatments should be taken into consideration. All healthcare professionals are urged to exercise clinical judgment and refer to the relevant medical literature and guidelines in conjunction with using the information provided here. The creators and contributors of this website shall not be held liable for any inaccuracies, errors, or for any actions taken based on the information contained herein. Patient safety and appropriate care should always be the priority, and consultation with experienced colleagues or specialists is recommended when necessary. For any inquiries about creating a website specific to your practice, or to report an error/bug, please contact me at ca.jobson@yahoo.com or text me at 817-319-8996.
+      </p>
     </div>
-  );
+    <footer className="footer">Project made by Cameron.J</footer>
+  </div>
+);
+
   
   
   
@@ -971,4 +990,3 @@ fetch('https://nicucalcrecords.herokuapp.com/send-email', {
 }
 
 export default NeoTool;
-
