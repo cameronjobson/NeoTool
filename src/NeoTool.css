@@ -18,7 +18,7 @@ html {
   height: auto; 
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 768px) {
   .top-right-image {
     top: 20px; 
     right: 20px; 
