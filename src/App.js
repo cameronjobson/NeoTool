@@ -937,6 +937,7 @@ const printText = (text) => {
 
 return (
   <div className="container">
+    <img src={process.env.PUBLIC_URL + '/IMG_8020.jpg'} alt="Top right decoration" className="top-right-image" />
     <h1 className="header">NICU CARE CALCULATOR</h1>
     <h2 className="sub-header">(PDX Fort Worth)</h2>
     <form>
@@ -975,7 +976,7 @@ return (
     )}
     <div className="disclaimer">
       <p>
-        <strong>Disclaimer:</strong> The information and tools provided on this website are intended to support neonatologists in the management and care of newborns using the Pediatrix Fort Worth protocol. The calculations and treatment dates generated are based on the data provided and should be used as a guide only. It is imperative to recognize that each newborn is unique, and variations in clinical conditions and response to treatments should be taken into consideration. All healthcare professionals are urged to exercise clinical judgment and refer to the relevant medical literature and guidelines in conjunction with using the information provided here. The creators and contributors of this website shall not be held liable for any inaccuracies, errors, or for any actions taken based on the information contained herein. Patient safety and appropriate care should always be the priority, and consultation with experienced colleagues or specialists is recommended when necessary. For any inquiries about creating a website specific to your practice, or to report an error/bug, please contact me at ca.jobson@yahoo.com or text me at 817-319-8996.
+        <strong>Disclaimer:</strong> The information and tools provided on this website are intended to support neonatologists in the management and care of newborns using the Pediatrix Fort Worth protocol. However, I (the developer of this site) am in no way associated with Pediatrix Fort Worth. The calculations and treatment dates generated are based on the data provided and should be used as a guide only. It is imperative to recognize that each newborn is unique, and variations in clinical conditions and response to treatments should be taken into consideration. All healthcare professionals are urged to exercise clinical judgment and refer to the relevant medical literature and guidelines in conjunction with using the information provided here. The creators and contributors of this website shall not be held liable for any inaccuracies, errors, or for any actions taken based on the information contained herein. Patient safety and appropriate care should always be the priority, and consultation with experienced colleagues or specialists is recommended when necessary. For any inquiries about creating a website specific to your practice, or to report an error/bug, please contact me at ca.jobson@yahoo.com or text me at 817-319-8996.
       </p>
     </div>
     <footer className="footer">Project made by Cameron.J</footer>
