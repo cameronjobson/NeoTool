@@ -901,8 +901,27 @@ const printText = (text) => {
         return; // return early to prevent the remaining code from executing
       }
   
+      function removeNIPPVtreatment(totalGestAgeDays, calculatedTexts) {
+        // If totalGestAgeDays is less than 210, return the original array
+        if (totalGestAgeDays < 210) {
+            return calculatedTexts;
+        }
+    
+        const targetText = "<b>NIPPV</b> if under 30w+0d:";
+        
+        // Filter the array, removing any elements that include the targetText
+        const filteredTexts = calculatedTexts.filter(text => !text.includes(targetText));
+        
+        // Now filteredTexts array does not include any text that includes "<b>NIPPV</b> if under 30w+0d:"
+        return filteredTexts;
+    }
+    
+    
+    let updatedTexts = removeNIPPVtreatment(totalGestAgeDays, calculatedTexts);
+
+
       // Join all calculated texts into a single string separated by '<br />' and set the treatment text
-      let finalTreatmentText = calculatedTexts.join('<br />');
+      let finalTreatmentText = updatedTexts.join('<br />');
       setTreatmentText(finalTreatmentText);
       setShowTreatment(true);
 
@@ -982,6 +1001,7 @@ return (
     <footer className="footer">Project made by Cameron.J</footer>
   </div>
 );
+
 
   
   
