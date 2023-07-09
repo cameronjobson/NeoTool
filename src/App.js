@@ -98,8 +98,10 @@ function NeoTool() {
     let totalPostMenstrualAgeInDays = postMenstrualAge * 7;
   
     let dobDate = new Date(dob);
-    dobDate.setUTCDate(dobDate.getUTCDate() + totalPostMenstrualAgeInDays - totalGestAgeInDays);
-  
+dobDate.setUTCDate(dobDate.getUTCDate() + totalPostMenstrualAgeInDays - totalGestAgeInDays);
+
+let examDate = new Date(dobDate.getUTCFullYear(), dobDate.getUTCMonth(), dobDate.getUTCDate());
+
     // Format date as MM-DD-YYYY
     let examDateFormatted = (dobDate.getUTCMonth() + 1).toString().padStart(2, '0') + '-'
                             + dobDate.getUTCDate().toString().padStart(2, '0') + '-'
@@ -110,13 +112,14 @@ function NeoTool() {
     today.setHours(0, 0, 0, 0);
   
     let color;
-    if (dobDate < today) {
+    if (examDate < today) {
       color = 'red';
-    } else if (dobDate.getTime() === today.getTime()) {
+    } else if (examDate.getTime() === today.getTime()) {
       color = 'green';
     } else {
       color = 'black';
     }
+    
   
     return `<span style="color: ${color};"><b>ROP</b> First Exam Due near week of: ${examDateFormatted}</span>`;
   };
