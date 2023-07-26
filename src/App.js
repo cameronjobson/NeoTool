@@ -181,34 +181,38 @@ let examDate = new Date(dobDate.getUTCFullYear(), dobDate.getUTCMonth(), dobDate
   
 
   
-  const addDaysToDOB = (dob, daysToAdd, prefixText) => {
-    let dobDate = new Date(dob);
+const addDaysToDOB = (dob, daysToAdd, prefixText) => {
+  let dobDate = new Date(dob);
 
-    // Add the desired number of days
-    dobDate.setUTCDate(dobDate.getUTCDate() + daysToAdd);
+  // Add the desired number of days
+  dobDate.setUTCDate(dobDate.getUTCDate() + daysToAdd);
 
-    // Current date to compare
-    let today = new Date();
-    today.setHours(0, 0, 0, 0);
+  // Current date to compare
+  let today = new Date();
+  today.setHours(0, 0, 0, 0);
 
-    // Format date as MM-DD-YYYY
-    let newDateFormatted = (dobDate.getUTCMonth() + 1).toString().padStart(2, '0') + '-' 
-                         + dobDate.getUTCDate().toString().padStart(2, '0') + '-' 
-                         + dobDate.getUTCFullYear();
+  // Format date as MM-DD-YYYY
+  let newDateFormatted = (dobDate.getUTCMonth() + 1).toString().padStart(2, '0') + '-' 
+                       + dobDate.getUTCDate().toString().padStart(2, '0') + '-' 
+                       + dobDate.getUTCFullYear();
 
-    // Determine color
-    let color;
-    if (dobDate < today) {
-      color = 'red';
-    } else if (dobDate.getTime() === today.getTime()) {
-      color = 'green';
-    } else {
-      color = 'black';
-    }
+  // Create a new date for comparison
+  let compareDate = new Date(dobDate.getUTCFullYear(), dobDate.getUTCMonth(), dobDate.getUTCDate());
 
-    // Wrapping both prefix text and date in a span and applying the color styling to it
-    return `<span style="color: ${color};">${prefixText} ${newDateFormatted}</span>`;
+  // Determine color
+  let color;
+  if (compareDate < today) {
+    color = 'red';
+  } else if (compareDate.getTime() === today.getTime()) {
+    color = 'green';
+  } else {
+    color = 'black';
+  }
+
+  // Wrapping both prefix text and date in a span and applying the color styling to it
+  return `<span style="color: ${color};">${prefixText} ${newDateFormatted}</span>`;
 };
+
 
 const printText = (text) => {
     return text;
@@ -246,7 +250,7 @@ const printText = (text) => {
 
       } else if (weight > 0 && weight <= 1250 && totalGestAgeDays > 153 && totalGestAgeDays <= 167) {
         calculatedTexts.push(calculateTreatmentDate(dob, gestAge, remainingGestAgeDays, 35, "<b>DEBM</b> stop at 1500g+35w:"));
-        calculatedTexts.push(printText("<b>HMF/PTF</b> until 3.5kg then D/C feeds"));
+        calculatedTexts.push(calculateTreatmentDate(dob, gestAge, remainingGestAgeDays, 33, "<b>Prolacta</b> stop at 1500g+33w:"));
         calculatedTexts.push(calculateTreatmentDate(dob, gestAge, remainingGestAgeDays, 35, "<b>Probiotics</b> stop at 1500g+35w:"));
         calculatedTexts.push(addDaysToDOB(dob, 14, "<b>VitD/Fe</b> at full feed and ≥14dol:"));
         calculatedTexts.push(printText("<b>Vit K</b> 0.3mg IV q72h x4 doses"));
@@ -331,7 +335,7 @@ const printText = (text) => {
         calculatedTexts.push(addDaysToDOB(dob, 30, "<b>Hep B Vac</b> @30 days"));
         
 
-      } else if (weight > 2000 && weight <= 2200 && totalGestAgeDays > 153 && totalGestAgeDays <= 167) {
+      } else if (weight > 2000 && weight <= 9999 && totalGestAgeDays > 153 && totalGestAgeDays <= 167) {
         calculatedTexts.push(calculateTreatmentDate(dob, gestAge, remainingGestAgeDays, 35, "<b>DEBM</b> stop at 35w:"));
         calculatedTexts.push(printText("<b>HMF/PTF</b> until 3.5kg then D/C feeds"));
         calculatedTexts.push(calculateTreatmentDate(dob, gestAge, remainingGestAgeDays, 35, "<b>Probiotics</b> stop at 35w:"));
@@ -420,7 +424,7 @@ const printText = (text) => {
         calculatedTexts.push(addDaysToDOB(dob, 30, "<b>Hep B Vac</b> @30 days"));
         
 
-      } else if (weight > 2000 && weight <= 2200 && ((totalGestAgeDays > 0 && totalGestAgeDays <= 153) || (totalGestAgeDays > 167 && totalGestAgeDays <= 195))) {
+      } else if (weight > 2000 && weight <= 9999 && ((totalGestAgeDays > 0 && totalGestAgeDays <= 153) || (totalGestAgeDays > 167 && totalGestAgeDays <= 195))) {
         calculatedTexts.push(calculateTreatmentDate(dob, gestAge, remainingGestAgeDays, 35, "<b>DEBM</b> stop at 35w:"));
         calculatedTexts.push(printText("<b>HMF/PTF</b> until 3.5kg then D/C feeds"));
         calculatedTexts.push(calculateTreatmentDate(dob, gestAge, remainingGestAgeDays, 35, "<b>Probiotics</b> stop at 35w:"));
@@ -527,7 +531,7 @@ const printText = (text) => {
   calculatedTexts.push(printText("<b>NEST</b> f/u Tier 1b"));
   calculatedTexts.push(addDaysToDOB(dob, 30, "<b>Hep B Vac</b> @30 days"));
 
-} else if (weight > 2000 && weight <= 2200 && totalGestAgeDays > 195 && totalGestAgeDays <= 202) {
+} else if (weight > 2000 && weight <= 9999 && totalGestAgeDays > 195 && totalGestAgeDays <= 202) {
   calculatedTexts.push(calculateTreatmentDate(dob, gestAge, remainingGestAgeDays, 35, "<b>DEBM</b> stop at 35w:"));
   calculatedTexts.push(printText("<b>HMF/PTF</b> until 3.5kg then D/C feeds"));
   calculatedTexts.push(calculateTreatmentDate(dob, gestAge, remainingGestAgeDays, 35, "<b>Probiotics</b> stop at 35w:"));
@@ -633,7 +637,7 @@ const printText = (text) => {
   calculatedTexts.push(addDaysToDOB(dob, 30, "<b>Hep B Vac</b> @30 days"));
 
 
-} else if (weight > 2000 && weight <= 2200 && totalGestAgeDays > 202 && totalGestAgeDays <= 216) {
+} else if (weight > 2000 && weight <= 9999 && totalGestAgeDays > 202 && totalGestAgeDays <= 216) {
   calculatedTexts.push(calculateTreatmentDate(dob, gestAge, remainingGestAgeDays, 35, "<b>DEBM</b> stop at 35w:"));
   calculatedTexts.push(printText("<b>HMF/PTF</b> until 3.5kg then D/C feeds"));
   calculatedTexts.push(calculateTreatmentDate(dob, gestAge, remainingGestAgeDays, 35, "<b>Probiotics</b> stop at 35w:"));
@@ -712,7 +716,7 @@ const printText = (text) => {
   calculatedTexts.push(addDaysToDOB(dob, 30, "<b>Hep B Vac</b> @30 days"));
   
 
-} else if (weight > 2000 && weight <= 2200 && totalGestAgeDays > 216 && totalGestAgeDays <= 223) {
+} else if (weight > 2000 && weight <= 9999 && totalGestAgeDays > 216 && totalGestAgeDays <= 223) {
   calculatedTexts.push(calculateTreatmentDate(dob, gestAge, remainingGestAgeDays, 35, "<b>DEBM</b> stop at 35w:"));
   calculatedTexts.push(printText("<b>HMF/PTF</b> until 3.5kg then D/C feeds"));
   calculatedTexts.push(calculateTreatmentDate(dob, gestAge, remainingGestAgeDays, 35, "<b>Probiotics</b> stop at 35w:"));
@@ -760,6 +764,7 @@ const printText = (text) => {
   calculatedTexts.push(printText("<b>HMF/PTF</b> until 3.5kg then D/C feeds"));
   calculatedTexts.push(addDaysToDOB(dob, 14, "<b>VitD/Fe</b> at full feed and ≥14dol:"));
   calculatedTexts.push(addDaysToDOB(dob, 28, "<b>ROP Exam</b> IF UNSTABLE @ 4w of age"));
+  calculatedTexts.push(calculatePostMenstrualExamDate(dob, gestAge, remainingGestAgeDays));
   calculatedTexts.push(printText("<b>ECHO:</b>"));
   calculatedTexts.push(calculateTreatmentDate(dob, gestAge, remainingGestAgeDays, 36, "&nbsp;&nbsp;&nbsp;<b>@36w</b> ONLY IF 32+0w & on resp supp:"));
   calculatedTexts.push(printText("<b>NEST</b> f/u Tier 2"));
@@ -778,7 +783,7 @@ const printText = (text) => {
   calculatedTexts.push(addDaysToDOB(dob, 30, "<b>Hep B Vac</b> @30 days"));
   
 
-} else if (weight > 2000 && weight <= 2200 && totalGestAgeDays > 223 && totalGestAgeDays <= 230) {
+} else if (weight > 2000 && weight <= 9999 && totalGestAgeDays > 223 && totalGestAgeDays <= 230) {
   calculatedTexts.push(calculateTreatmentDate(dob, gestAge, remainingGestAgeDays, 35, "<b>DEBM</b> stop at 35w:"));
   calculatedTexts.push(printText("<b>HMF/PTF</b> until 3.5kg then D/C feeds"));
   calculatedTexts.push(addDaysToDOB(dob, 14, "<b>VitD/Fe</b> at full feed and ≥14dol:"));
@@ -832,7 +837,7 @@ const printText = (text) => {
   calculatedTexts.push(printText("<b>ECI</b> if SGA, (ECI/Nest if meet criteria)"));
   calculatedTexts.push(addDaysToDOB(dob, 30, "<b>Hep B Vac</b> @30 days"));
 
-} else if (weight > 2000 && weight <= 2200 && totalGestAgeDays > 230 && totalGestAgeDays < 245) {
+} else if (weight > 2000 && weight <= 9999 && totalGestAgeDays > 230 && totalGestAgeDays < 245) {
   calculatedTexts.push(addDaysToDOB(dob, 7, "<b>DEBM</b> stop at 1500g or max 7d:"));
   calculatedTexts.push(printText("<b>HMF/PTF</b> until 3.5kg then D/C feeds"));
   calculatedTexts.push(addDaysToDOB(dob, 14, "<b>VitD/Fe</b> at full feed and ≥14dol:"));
@@ -881,7 +886,7 @@ const printText = (text) => {
   calculatedTexts.push(printText("<b>ECI</b> if SGA, (ECI/Nest if meet criteria)"));
   calculatedTexts.push(addDaysToDOB(dob, 30, "<b>Hep B Vac</b> @30 days"));
 
-} else if (weight > 2000 && weight <= 2200 && totalGestAgeDays >= 245 && totalGestAgeDays <= 301) {
+} else if (weight > 2000 && weight <= 9999 && totalGestAgeDays >= 245 && totalGestAgeDays <= 301) {
   calculatedTexts.push(addDaysToDOB(dob, 7, "<b>DEBM</b> stop at max 7d:"));
   calculatedTexts.push(printText("<b>HMF/PTF</b> until 3.5kg then D/C feeds"));
   calculatedTexts.push(addDaysToDOB(dob, 14, "<b>VitD/Fe</b> at full feed and ≥14dol:"));
