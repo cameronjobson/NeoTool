@@ -811,7 +811,6 @@ const printText = (text) => {
   calculatedTexts.push(calculateTreatmentDate(dob, gestAge, remainingGestAgeDays, 35, "<b>DEBM</b> stop at 1500g+35w:"));
   calculatedTexts.push(printText("<b>HMF/PTF</b> until 3.5kg then D/C feeds"));
   calculatedTexts.push(calculateTreatmentDate(dob, gestAge, remainingGestAgeDays, 35, "<b>Probiotics</b> stop at 1500g+35w:"));
-  calculatedTexts.push(printText("<b>Probiotics</b> stop at 1500g"));
   calculatedTexts.push(addDaysToDOB(dob, 14, "<b>VitD/Fe</b> at full feed and ≥14dol:"));
   calculatedTexts.push(printText("<b>Vit K</b> 0.3-0.5mg/kg IM, 1mg if 1500g"));
   calculatedTexts.push(calculatePostMenstrualExamDate(dob, gestAge, remainingGestAgeDays));
