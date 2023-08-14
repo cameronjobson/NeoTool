@@ -567,7 +567,7 @@ const printText = (text) => {
   calculatedTexts.push(addDaysToDOB(dob, 14, "&nbsp;&nbsp;&nbsp;(14 days)"));
   calculatedTexts.push(addDaysToDOB(dob, 21, "&nbsp;&nbsp;&nbsp;(21 days)"));
   calculatedTexts.push(addDaysToDOB(dob, 28, "&nbsp;&nbsp;&nbsp;(28 days)"));
-  calculatedTexts.push(calculateTreatmentDate(dob, gestAge, remainingGestAgeDays, 30, "<b>NIPPV</b> if under 30w+0d:"));
+  calculatedTexts.push(printText("<b>NIPPV</b>"));
   calculatedTexts.push(calculateTreatmentDate(dob, gestAge, remainingGestAgeDays, 32, "<b>Caffeine</b> til 32w+no apnea off PP:"));
   calculatedTexts.push(addDaysToDOB(dob, 28, "<b>Synagis</b> if O2 at least 28d after birth"));
   calculatedTexts.push(printText("<b>NEST</b> f/u Tier 2"));
@@ -588,7 +588,7 @@ const printText = (text) => {
   calculatedTexts.push(addDaysToDOB(dob, 14, "&nbsp;&nbsp;&nbsp;(14 days)"));
   calculatedTexts.push(addDaysToDOB(dob, 21, "&nbsp;&nbsp;&nbsp;(21 days)"));
   calculatedTexts.push(addDaysToDOB(dob, 28, "&nbsp;&nbsp;&nbsp;(28 days)"));
-  calculatedTexts.push(calculateTreatmentDate(dob, gestAge, remainingGestAgeDays, 30, "<b>NIPPV</b> if under 30w+0d:"));
+  calculatedTexts.push(printText("<b>NIPPV</b>"));
   calculatedTexts.push(calculateTreatmentDate(dob, gestAge, remainingGestAgeDays, 32, "<b>Caffeine</b> til 32w+no apnea off PP:"));
   calculatedTexts.push(addDaysToDOB(dob, 28, "<b>Synagis</b> if O2 at least 28d after birth"));
   calculatedTexts.push(printText("<b>NEST</b> f/u Tier 2"));
@@ -609,7 +609,7 @@ const printText = (text) => {
   calculatedTexts.push(addDaysToDOB(dob, 14, "&nbsp;&nbsp;&nbsp;(14 days)"));
   calculatedTexts.push(addDaysToDOB(dob, 21, "&nbsp;&nbsp;&nbsp;(21 days)"));
   calculatedTexts.push(addDaysToDOB(dob, 28, "&nbsp;&nbsp;&nbsp;(28 days)"));
-  calculatedTexts.push(calculateTreatmentDate(dob, gestAge, remainingGestAgeDays, 30, "<b>NIPPV</b> if under 30w+0d:"));
+  calculatedTexts.push(printText("<b>NIPPV</b>"));
   calculatedTexts.push(calculateTreatmentDate(dob, gestAge, remainingGestAgeDays, 32, "<b>Caffeine</b> til 32w+no apnea off PP:"));
   calculatedTexts.push(addDaysToDOB(dob, 28, "<b>Synagis</b> if O2 at least 28d after birth"));
   calculatedTexts.push(printText("<b>NEST</b> f/u Tier 2"));
@@ -630,7 +630,7 @@ const printText = (text) => {
   calculatedTexts.push(addDaysToDOB(dob, 14, "&nbsp;&nbsp;&nbsp;(14 days)"));
   calculatedTexts.push(addDaysToDOB(dob, 21, "&nbsp;&nbsp;&nbsp;(21 days)"));
   calculatedTexts.push(addDaysToDOB(dob, 28, "&nbsp;&nbsp;&nbsp;(28 days)"));
-  calculatedTexts.push(calculateTreatmentDate(dob, gestAge, remainingGestAgeDays, 30, "<b>NIPPV</b> if under 30w+0d:"));
+  calculatedTexts.push(printText("<b>NIPPV</b>"));
   calculatedTexts.push(calculateTreatmentDate(dob, gestAge, remainingGestAgeDays, 32, "<b>Caffeine</b> til 32w+no apnea off PP:"));
   calculatedTexts.push(addDaysToDOB(dob, 28, "<b>Synagis</b> if O2 at least 28d after birth"));
   calculatedTexts.push(printText("<b>NEST</b> f/u Tier 2"));
@@ -651,7 +651,7 @@ const printText = (text) => {
   calculatedTexts.push(addDaysToDOB(dob, 14, "&nbsp;&nbsp;&nbsp;(14 days)"));
   calculatedTexts.push(addDaysToDOB(dob, 21, "&nbsp;&nbsp;&nbsp;(21 days)"));
   calculatedTexts.push(addDaysToDOB(dob, 28, "&nbsp;&nbsp;&nbsp;(28 days)"));
-  calculatedTexts.push(calculateTreatmentDate(dob, gestAge, remainingGestAgeDays, 30, "<b>NIPPV</b> if under 30w+0d:"));
+  calculatedTexts.push(printText("<b>NIPPV</b>"));
   calculatedTexts.push(calculateTreatmentDate(dob, gestAge, remainingGestAgeDays, 32, "<b>Caffeine</b> til 32w+no apnea off PP:"));
   calculatedTexts.push(addDaysToDOB(dob, 28, "<b>Synagis</b> if O2 at least 28d after birth"));
   calculatedTexts.push(printText("<b>NEST</b> f/u Tier 2"));
@@ -913,7 +913,7 @@ const printText = (text) => {
             return calculatedTexts;
         }
     
-        const targetText = "<b>NIPPV</b> if under 30w+0d:";
+        const targetText = "<b>NIPPV</b>";
         
         // Filter the array, removing any elements that include the targetText
         const filteredTexts = calculatedTexts.filter(text => !text.includes(targetText));
