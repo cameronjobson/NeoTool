@@ -924,7 +924,131 @@ const printText = (text) => {
     
     
     let updatedTexts = removeNIPPVtreatment(totalGestAgeDays, calculatedTexts);
+    
+    if (totalGestAgeDays <= 174) {
 
+      let dobDate = new Date(dob);
+      let TSHDates = [];
+    
+      // Get the current date without time for comparison
+      let currentDate = new Date();
+      currentDate.setHours(0, 0, 0, 0);
+    
+      // Helper function to format dates and apply CSS classes
+      const formatAndApplyCssClass = (date, prefixText) => {
+          let formattedDate = (date.getUTCMonth() + 1).toString().padStart(2, '0') + '-'
+                              + date.getUTCDate().toString().padStart(2, '0') + '-'
+                              + date.getUTCFullYear();
+    
+          // Convert date to a local date (without time) for comparison
+          let localDate = new Date(date.getUTCFullYear(), date.getUTCMonth(), date.getUTCDate());
+    
+          // Determine the CSS class for the date text
+          let cssClass = '';
+          if (localDate < currentDate) {
+              cssClass = 'past-date';
+          } else if (localDate.getTime() === currentDate.getTime()) {
+              cssClass = 'current-date';
+          }
+    
+          // Return the date wrapped in HTML with the relevant CSS class.
+          return `<span class="${cssClass}">${prefixText} ${formattedDate}</span><br>`;
+      }
+    
+      // First HUS date after 7 days
+      let firstHusDate = new Date(dobDate);
+      firstHusDate.setUTCDate(dobDate.getUTCDate() + 30);
+      TSHDates.push(formatAndApplyCssClass(firstHusDate, '&nbsp;&nbsp;30 days:'));
+    
+      // Second HUS date after 28 days
+      let secondHusDate = new Date(dobDate);
+      secondHusDate.setUTCDate(dobDate.getUTCDate() + 60);
+      TSHDates.push(formatAndApplyCssClass(secondHusDate, '&nbsp;&nbsp;60 days:'));
+    
+      // Add a prefix to the array for the bold "HUS"
+      TSHDates.unshift('<b>TSH & FreeT4:</b><br>');
+    
+      updatedTexts.push(TSHDates.join('')); // Join the array to make it a single string
+    
+    } else if (totalGestAgeDays <= 216) {
+      let dobDate = new Date(dob);
+      let TSHDates = [];
+    
+      // Get the current date without time for comparison
+      let currentDate = new Date();
+      currentDate.setHours(0, 0, 0, 0);
+    
+      // Helper function to format dates and apply CSS classes
+      const formatAndApplyCssClass = (date, prefixText) => {
+          let formattedDate = (date.getUTCMonth() + 1).toString().padStart(2, '0') + '-'
+                              + date.getUTCDate().toString().padStart(2, '0') + '-'
+                              + date.getUTCFullYear();
+    
+          // Convert date to a local date (without time) for comparison
+          let localDate = new Date(date.getUTCFullYear(), date.getUTCMonth(), date.getUTCDate());
+    
+          // Determine the CSS class for the date text
+          let cssClass = '';
+          if (localDate < currentDate) {
+              cssClass = 'past-date';
+          } else if (localDate.getTime() === currentDate.getTime()) {
+              cssClass = 'current-date';
+          }
+    
+          // Return the date wrapped in HTML with the relevant CSS class.
+          return `<span class="${cssClass}">${prefixText} ${formattedDate}</span><br>`;
+      }
+    
+      // First HUS date after 30 days
+      let firstHusDate = new Date(dobDate);
+      firstHusDate.setUTCDate(dobDate.getUTCDate() + 30);
+      TSHDates.push(formatAndApplyCssClass(firstHusDate, '&nbsp;&nbsp;30 days:'));
+    
+      // Add a prefix to the array for the bold "HUS"
+      TSHDates.unshift('<b>TSH & FreeT4:</b><br>');
+    
+      updatedTexts.push(TSHDates.join('')); // Join the array to make it a single string
+} else if (weight <= 1500){
+
+  let dobDate = new Date(dob);
+  let TSHDates = [];
+
+  // Get the current date without time for comparison
+  let currentDate = new Date();
+  currentDate.setHours(0, 0, 0, 0);
+
+  // Helper function to format dates and apply CSS classes
+  const formatAndApplyCssClass = (date, prefixText) => {
+      let formattedDate = (date.getUTCMonth() + 1).toString().padStart(2, '0') + '-'
+                          + date.getUTCDate().toString().padStart(2, '0') + '-'
+                          + date.getUTCFullYear();
+
+      // Convert date to a local date (without time) for comparison
+      let localDate = new Date(date.getUTCFullYear(), date.getUTCMonth(), date.getUTCDate());
+
+      // Determine the CSS class for the date text
+      let cssClass = '';
+      if (localDate < currentDate) {
+          cssClass = 'past-date';
+      } else if (localDate.getTime() === currentDate.getTime()) {
+          cssClass = 'current-date';
+      }
+
+      // Return the date wrapped in HTML with the relevant CSS class.
+      return `<span class="${cssClass}">${prefixText} ${formattedDate}</span><br>`;
+  }
+
+  // First HUS date after 30 days
+  let firstHusDate = new Date(dobDate);
+  firstHusDate.setUTCDate(dobDate.getUTCDate() + 30);
+  TSHDates.push(formatAndApplyCssClass(firstHusDate, '30 days:'));
+
+  // Add a prefix to the array for the bold "HUS"
+  TSHDates.unshift('<b>TSH & FreeT4:</b><br>');
+
+  updatedTexts.push(TSHDates.join('')); // Join the array to make it a single string
+
+}
 
       // Join all calculated texts into a single string separated by '<br />' and set the treatment text
       let finalTreatmentText = updatedTexts.join('<br />');
