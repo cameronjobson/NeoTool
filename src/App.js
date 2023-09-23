@@ -924,7 +924,12 @@ const printText = (text) => {
     
     
     let updatedTexts = removeNIPPVtreatment(totalGestAgeDays, calculatedTexts);
-    
+
+    //Fluconazole Prophylaxis Treatment Insert
+    if (totalGestAgeDays <= 174 || weight <= 749){
+      updatedTexts.push(addDaysToDOB(dob, 42, "<b>Fluconazole Prophylaxis:</b><br>&nbsp;&nbsp;&nbsp;3mg/kg/dose every 72h until CVL stopped or max of 6w"));
+    }
+      
     if (totalGestAgeDays <= 174) {
 
       let dobDate = new Date(dob);
