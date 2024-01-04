@@ -239,7 +239,7 @@ const printText = (text) => {
         calculatedTexts.push(addDaysToDOB(dob, 14, "&nbsp;&nbsp;&nbsp;(14 days)"));
         calculatedTexts.push(addDaysToDOB(dob, 28, "&nbsp;&nbsp;&nbsp;(28 days)"));
         calculatedTexts.push(printText("<b>NIPPV</b>"));
-        calculatedTexts.push(calculateTreatmentDate(dob, gestAge, remainingGestAgeDays, 32, "<b>Caffeine</b> til 32w+no apnea off PP:"));
+        calculatedTexts.push(calculateTreatmentDate(dob, gestAge, remainingGestAgeDays, 34, "<b>Caffeine</b> til 34w+no apnea off PP:"));
         calculatedTexts.push(printText("<b>Synagis</b> "));
         calculatedTexts.push(printText("<b>NEST</b> f/u Tier 1b"));
         calculatedTexts.push(addDaysToDOB(dob, 30, "<b>Hep B Vac</b> @30 days"));
@@ -261,7 +261,7 @@ const printText = (text) => {
         calculatedTexts.push(addDaysToDOB(dob, 14, "&nbsp;&nbsp;&nbsp;(14 days)"));
         calculatedTexts.push(addDaysToDOB(dob, 28, "&nbsp;&nbsp;&nbsp;(28 days)"));
         calculatedTexts.push(printText("<b>NIPPV</b>"));
-        calculatedTexts.push(calculateTreatmentDate(dob, gestAge, remainingGestAgeDays, 32, "<b>Caffeine</b> til 32w+no apnea off PP:"));
+        calculatedTexts.push(calculateTreatmentDate(dob, gestAge, remainingGestAgeDays, 34, "<b>Caffeine</b> til 34w+no apnea off PP:"));
         calculatedTexts.push(printText("<b>Synagis</b>"));
         calculatedTexts.push(printText("<b>NEST</b> f/u Tier 1b"));
         calculatedTexts.push(addDaysToDOB(dob, 30, "<b>Hep B Vac</b> @30 days"));
@@ -280,7 +280,7 @@ const printText = (text) => {
         calculatedTexts.push(addDaysToDOB(dob, 14, "&nbsp;&nbsp;&nbsp;(14 days)"));
         calculatedTexts.push(addDaysToDOB(dob, 28, "&nbsp;&nbsp;&nbsp;(28 days)"));
         calculatedTexts.push(printText("<b>NIPPV</b>"));
-        calculatedTexts.push(calculateTreatmentDate(dob, gestAge, remainingGestAgeDays, 32, "<b>Caffeine</b> til 32w+no apnea off PP:"));
+        calculatedTexts.push(calculateTreatmentDate(dob, gestAge, remainingGestAgeDays, 34, "<b>Caffeine</b> til 34w+no apnea off PP:"));
         calculatedTexts.push(printText("<b>Synagis</b>"));
         calculatedTexts.push(printText("<b>NEST</b> f/u Tier 1b"));
         calculatedTexts.push(addDaysToDOB(dob, 30, "<b>Hep B Vac</b> @30 days"));
@@ -299,7 +299,7 @@ const printText = (text) => {
         calculatedTexts.push(addDaysToDOB(dob, 14, "&nbsp;&nbsp;&nbsp;(14 days)"));
         calculatedTexts.push(addDaysToDOB(dob, 28, "&nbsp;&nbsp;&nbsp;(28 days)"));
         calculatedTexts.push(printText("<b>NIPPV</b>"));
-        calculatedTexts.push(calculateTreatmentDate(dob, gestAge, remainingGestAgeDays, 32, "<b>Caffeine</b> til 32w+no apnea off PP:"));
+        calculatedTexts.push(calculateTreatmentDate(dob, gestAge, remainingGestAgeDays, 34, "<b>Caffeine</b> til 34w+no apnea off PP:"));
         calculatedTexts.push(printText("<b>Synagis</b> "));
         calculatedTexts.push(printText("<b>NEST</b> f/u Tier 1b"));
         calculatedTexts.push(addDaysToDOB(dob, 30, "<b>Hep B Vac</b> @30 days"));
@@ -319,7 +319,7 @@ const printText = (text) => {
         calculatedTexts.push(addDaysToDOB(dob, 14, "&nbsp;&nbsp;&nbsp;(14 days)"));
         calculatedTexts.push(addDaysToDOB(dob, 28, "&nbsp;&nbsp;&nbsp;(28 days)"));
         calculatedTexts.push(printText("<b>NIPPV</b>"));
-        calculatedTexts.push(calculateTreatmentDate(dob, gestAge, remainingGestAgeDays, 32, "<b>Caffeine</b> til 32w+no apnea off PP:"));
+        calculatedTexts.push(calculateTreatmentDate(dob, gestAge, remainingGestAgeDays, 34, "<b>Caffeine</b> til 34w+no apnea off PP:"));
         calculatedTexts.push(printText("<b>Synagis</b> "));
         calculatedTexts.push(printText("<b>NEST</b> f/u Tier 1b"));
         calculatedTexts.push(addDaysToDOB(dob, 30, "<b>Hep B Vac</b> @30 days"));
@@ -339,7 +339,7 @@ const printText = (text) => {
         calculatedTexts.push(addDaysToDOB(dob, 14, "&nbsp;&nbsp;&nbsp;(14 days)"));
         calculatedTexts.push(addDaysToDOB(dob, 28, "&nbsp;&nbsp;&nbsp;(28 days)"));
         calculatedTexts.push(printText("<b>NIPPV</b>"));
-        calculatedTexts.push(calculateTreatmentDate(dob, gestAge, remainingGestAgeDays, 32, "<b>Caffeine</b> til 32w+no apnea off PP:"));
+        calculatedTexts.push(calculateTreatmentDate(dob, gestAge, remainingGestAgeDays, 34, "<b>Caffeine</b> til 34w+no apnea off PP:"));
         calculatedTexts.push(printText("<b>Synagis</b> "));
         calculatedTexts.push(printText("<b>NEST</b> f/u Tier 1b"));
         
@@ -361,7 +361,7 @@ const printText = (text) => {
         calculatedTexts.push(addDaysToDOB(dob, 14, "&nbsp;&nbsp;&nbsp;(14 days)"));
         calculatedTexts.push(addDaysToDOB(dob, 28, "&nbsp;&nbsp;&nbsp;(28 days)"));
         calculatedTexts.push(printText("<b>NIPPV</b>"));
-        calculatedTexts.push(calculateTreatmentDate(dob, gestAge, remainingGestAgeDays, 32, "<b>Caffeine</b> til 32w+no apnea off PP:"));
+        calculatedTexts.push(calculateTreatmentDate(dob, gestAge, remainingGestAgeDays, 34, "<b>Caffeine</b> til 34w+no apnea off PP:"));
         calculatedTexts.push(printText("<b>Synagis</b>"));
         calculatedTexts.push(printText("<b>NEST</b> f/u Tier 1b"));
         calculatedTexts.push(addDaysToDOB(dob, 30, "<b>Hep B Vac</b> @30 days"));
@@ -380,7 +380,7 @@ const printText = (text) => {
         calculatedTexts.push(addDaysToDOB(dob, 14, "&nbsp;&nbsp;&nbsp;(14 days)"));
         calculatedTexts.push(addDaysToDOB(dob, 28, "&nbsp;&nbsp;&nbsp;(28 days)"));
         calculatedTexts.push(printText("<b>NIPPV</b>"));
-        calculatedTexts.push(calculateTreatmentDate(dob, gestAge, remainingGestAgeDays, 32, "<b>Caffeine</b> til 32w+no apnea off PP:"));
+        calculatedTexts.push(calculateTreatmentDate(dob, gestAge, remainingGestAgeDays, 34, "<b>Caffeine</b> til 34w+no apnea off PP:"));
         calculatedTexts.push(printText("<b>Synagis</b> "));
         calculatedTexts.push(printText("<b>NEST</b> f/u Tier 1b"));
         calculatedTexts.push(addDaysToDOB(dob, 30, "<b>Hep B Vac</b> @30 days"));
@@ -400,7 +400,7 @@ const printText = (text) => {
         calculatedTexts.push(addDaysToDOB(dob, 14, "&nbsp;&nbsp;&nbsp;(14 days)"));
         calculatedTexts.push(addDaysToDOB(dob, 28, "&nbsp;&nbsp;&nbsp;(28 days)"));
         calculatedTexts.push(printText("<b>NIPPV</b>"));
-        calculatedTexts.push(calculateTreatmentDate(dob, gestAge, remainingGestAgeDays, 32, "<b>Caffeine</b> til 32w+no apnea off PP:"));
+        calculatedTexts.push(calculateTreatmentDate(dob, gestAge, remainingGestAgeDays, 34, "<b>Caffeine</b> til 34w+no apnea off PP:"));
         calculatedTexts.push(printText("<b>Synagis</b> "));
         calculatedTexts.push(printText("<b>NEST</b> f/u Tier 1b"));
         calculatedTexts.push(addDaysToDOB(dob, 30, "<b>Hep B Vac</b> @30 days"));
@@ -420,7 +420,7 @@ const printText = (text) => {
         calculatedTexts.push(addDaysToDOB(dob, 14, "&nbsp;&nbsp;&nbsp;(14 days)"));
         calculatedTexts.push(addDaysToDOB(dob, 28, "&nbsp;&nbsp;&nbsp;(28 days)"));
         calculatedTexts.push(printText("<b>NIPPV</b>"));
-        calculatedTexts.push(calculateTreatmentDate(dob, gestAge, remainingGestAgeDays, 32, "<b>Caffeine</b> til 32w+no apnea off PP:"));
+        calculatedTexts.push(calculateTreatmentDate(dob, gestAge, remainingGestAgeDays, 34, "<b>Caffeine</b> til 34w+no apnea off PP:"));
         calculatedTexts.push(printText("<b>Synagis</b> "));
         calculatedTexts.push(printText("<b>NEST</b> f/u Tier 1b"));
         
@@ -441,7 +441,7 @@ const printText = (text) => {
   calculatedTexts.push(addDaysToDOB(dob, 14, "&nbsp;&nbsp;&nbsp;(14 days)"));
   calculatedTexts.push(addDaysToDOB(dob, 28, "&nbsp;&nbsp;&nbsp;(28 days)"));
   calculatedTexts.push(printText("<b>NIPPV</b>"));
-  calculatedTexts.push(calculateTreatmentDate(dob, gestAge, remainingGestAgeDays, 32, "<b>Caffeine</b> til 32w+no apnea off PP:"));
+  calculatedTexts.push(calculateTreatmentDate(dob, gestAge, remainingGestAgeDays, 34, "<b>Caffeine</b> til 34w+no apnea off PP:"));
   calculatedTexts.push(printText("<b>Synagis</b>"));
   calculatedTexts.push(printText("<b>NEST</b> f/u Tier 1b"));
   calculatedTexts.push(addDaysToDOB(dob, 30, "<b>Hep B Vac</b> @30 days"));
@@ -460,7 +460,7 @@ const printText = (text) => {
   calculatedTexts.push(addDaysToDOB(dob, 14, "&nbsp;&nbsp;&nbsp;(14 days)"));
   calculatedTexts.push(addDaysToDOB(dob, 28, "&nbsp;&nbsp;&nbsp;(28 days)"));
   calculatedTexts.push(printText("<b>NIPPV</b>"));
-  calculatedTexts.push(calculateTreatmentDate(dob, gestAge, remainingGestAgeDays, 32, "<b>Caffeine</b> til 32w+no apnea off PP:"));
+  calculatedTexts.push(calculateTreatmentDate(dob, gestAge, remainingGestAgeDays, 34, "<b>Caffeine</b> til 34w+no apnea off PP:"));
   calculatedTexts.push(printText("<b>Synagis</b> "));
   calculatedTexts.push(printText("<b>NEST</b> f/u Tier 1b"));
   calculatedTexts.push(addDaysToDOB(dob, 30, "<b>Hep B Vac</b> @30 days"));
@@ -479,7 +479,7 @@ const printText = (text) => {
   calculatedTexts.push(addDaysToDOB(dob, 14, "&nbsp;&nbsp;&nbsp;(14 days)"));
   calculatedTexts.push(addDaysToDOB(dob, 28, "&nbsp;&nbsp;&nbsp;(28 days)"));
   calculatedTexts.push(printText("<b>NIPPV</b>"));
-  calculatedTexts.push(calculateTreatmentDate(dob, gestAge, remainingGestAgeDays, 32, "<b>Caffeine</b> til 32w+no apnea off PP:"));
+  calculatedTexts.push(calculateTreatmentDate(dob, gestAge, remainingGestAgeDays, 34, "<b>Caffeine</b> til 34w+no apnea off PP:"));
   calculatedTexts.push(printText("<b>Synagis</b> "));
   calculatedTexts.push(printText("<b>NEST</b> f/u Tier 1b"));
   calculatedTexts.push(addDaysToDOB(dob, 30, "<b>Hep B Vac</b> @30 days"));
@@ -498,7 +498,7 @@ const printText = (text) => {
   calculatedTexts.push(addDaysToDOB(dob, 14, "&nbsp;&nbsp;&nbsp;(14 days)"));
   calculatedTexts.push(addDaysToDOB(dob, 28, "&nbsp;&nbsp;&nbsp;(28 days)"));
   calculatedTexts.push(printText("<b>NIPPV</b>"));
-  calculatedTexts.push(calculateTreatmentDate(dob, gestAge, remainingGestAgeDays, 32, "<b>Caffeine</b> til 32w+no apnea off PP:"));
+  calculatedTexts.push(calculateTreatmentDate(dob, gestAge, remainingGestAgeDays, 34, "<b>Caffeine</b> til 34w+no apnea off PP:"));
   calculatedTexts.push(printText("<b>Synagis</b> "));
   calculatedTexts.push(printText("<b>NEST</b> f/u Tier 1b"));
   calculatedTexts.push(addDaysToDOB(dob, 30, "<b>Hep B Vac</b> @30 days"));
@@ -516,7 +516,7 @@ const printText = (text) => {
   calculatedTexts.push(addDaysToDOB(dob, 14, "&nbsp;&nbsp;&nbsp;(14 days)"));
   calculatedTexts.push(addDaysToDOB(dob, 28, "&nbsp;&nbsp;&nbsp;(28 days)"));
   calculatedTexts.push(printText("<b>NIPPV</b>"));
-  calculatedTexts.push(calculateTreatmentDate(dob, gestAge, remainingGestAgeDays, 32, "<b>Caffeine</b> til 32w+no apnea off PP:"));
+  calculatedTexts.push(calculateTreatmentDate(dob, gestAge, remainingGestAgeDays, 34, "<b>Caffeine</b> til 34w+no apnea off PP:"));
   calculatedTexts.push(printText("<b>Synagis</b> "));
   calculatedTexts.push(printText("<b>NEST</b> f/u Tier 1b"));
 
@@ -536,7 +536,7 @@ const printText = (text) => {
   calculatedTexts.push(addDaysToDOB(dob, 14, "&nbsp;&nbsp;&nbsp;(14 days)"));
   calculatedTexts.push(addDaysToDOB(dob, 28, "&nbsp;&nbsp;&nbsp;(28 days)"));
   calculatedTexts.push(printText("<b>NIPPV</b>"));
-  calculatedTexts.push(calculateTreatmentDate(dob, gestAge, remainingGestAgeDays, 32, "<b>Caffeine</b> til 32w+no apnea off PP:"));
+  calculatedTexts.push(calculateTreatmentDate(dob, gestAge, remainingGestAgeDays, 34, "<b>Caffeine</b> til 34w+no apnea off PP:"));
   calculatedTexts.push(addDaysToDOB(dob, 28, "<b>Synagis</b> if O2 at least 28d after birth"));
   calculatedTexts.push(printText("<b>NEST</b> f/u Tier 2"));
   calculatedTexts.push(addDaysToDOB(dob, 30, "<b>Hep B Vac</b> @30 days"));
@@ -555,7 +555,7 @@ const printText = (text) => {
   calculatedTexts.push(addDaysToDOB(dob, 14, "&nbsp;&nbsp;&nbsp;(14 days)"));
   calculatedTexts.push(addDaysToDOB(dob, 28, "&nbsp;&nbsp;&nbsp;(28 days)"));
   calculatedTexts.push(printText("<b>NIPPV</b>"));
-  calculatedTexts.push(calculateTreatmentDate(dob, gestAge, remainingGestAgeDays, 32, "<b>Caffeine</b> til 32w+no apnea off PP:"));
+  calculatedTexts.push(calculateTreatmentDate(dob, gestAge, remainingGestAgeDays, 34, "<b>Caffeine</b> til 34w+no apnea off PP:"));
   calculatedTexts.push(addDaysToDOB(dob, 28, "<b>Synagis</b> if O2 at least 28d after birth"));
   calculatedTexts.push(printText("<b>NEST</b> f/u Tier 2"));
   calculatedTexts.push(addDaysToDOB(dob, 30, "<b>Hep B Vac</b> @30 days"));
@@ -574,7 +574,7 @@ const printText = (text) => {
   calculatedTexts.push(addDaysToDOB(dob, 14, "&nbsp;&nbsp;&nbsp;(14 days)"));
   calculatedTexts.push(addDaysToDOB(dob, 28, "&nbsp;&nbsp;&nbsp;(28 days)"));
   calculatedTexts.push(printText("<b>NIPPV</b>"));
-  calculatedTexts.push(calculateTreatmentDate(dob, gestAge, remainingGestAgeDays, 32, "<b>Caffeine</b> til 32w+no apnea off PP:"));
+  calculatedTexts.push(calculateTreatmentDate(dob, gestAge, remainingGestAgeDays, 34, "<b>Caffeine</b> til 34w+no apnea off PP:"));
   calculatedTexts.push(addDaysToDOB(dob, 28, "<b>Synagis</b> if O2 at least 28d after birth"));
   calculatedTexts.push(printText("<b>NEST</b> f/u Tier 2"));
   calculatedTexts.push(addDaysToDOB(dob, 30, "<b>Hep B Vac</b> @30 days"));
@@ -593,7 +593,7 @@ const printText = (text) => {
   calculatedTexts.push(addDaysToDOB(dob, 14, "&nbsp;&nbsp;&nbsp;(14 days)"));
   calculatedTexts.push(addDaysToDOB(dob, 28, "&nbsp;&nbsp;&nbsp;(28 days)"));
   calculatedTexts.push(printText("<b>NIPPV</b>"));
-  calculatedTexts.push(calculateTreatmentDate(dob, gestAge, remainingGestAgeDays, 32, "<b>Caffeine</b> til 32w+no apnea off PP:"));
+  calculatedTexts.push(calculateTreatmentDate(dob, gestAge, remainingGestAgeDays, 34, "<b>Caffeine</b> til 34w+no apnea off PP:"));
   calculatedTexts.push(addDaysToDOB(dob, 28, "<b>Synagis</b> if O2 at least 28d after birth"));
   calculatedTexts.push(printText("<b>NEST</b> f/u Tier 2"));
   calculatedTexts.push(addDaysToDOB(dob, 30, "<b>Hep B Vac</b> @30 days"));
@@ -612,7 +612,7 @@ const printText = (text) => {
   calculatedTexts.push(addDaysToDOB(dob, 14, "&nbsp;&nbsp;&nbsp;(14 days)"));
   calculatedTexts.push(addDaysToDOB(dob, 28, "&nbsp;&nbsp;&nbsp;(28 days)"));
   calculatedTexts.push(printText("<b>NIPPV</b>"));
-  calculatedTexts.push(calculateTreatmentDate(dob, gestAge, remainingGestAgeDays, 32, "<b>Caffeine</b> til 32w+no apnea off PP:"));
+  calculatedTexts.push(calculateTreatmentDate(dob, gestAge, remainingGestAgeDays, 34, "<b>Caffeine</b> til 34w+no apnea off PP:"));
   calculatedTexts.push(addDaysToDOB(dob, 28, "<b>Synagis</b> if O2 at least 28d after birth"));
   calculatedTexts.push(printText("<b>NEST</b> f/u Tier 2"));
 
@@ -627,7 +627,7 @@ const printText = (text) => {
   calculatedTexts.push(calculatePostMenstrualExamDate(dob, gestAge, remainingGestAgeDays));
   calculatedTexts.push(printText("<b>ECHO:</b>"));
   calculatedTexts.push(calculateTreatmentDate(dob, gestAge, remainingGestAgeDays, 36, "&nbsp;&nbsp;&nbsp;@36w if on resp supp:"));
-  calculatedTexts.push(calculateTreatmentDate(dob, gestAge, remainingGestAgeDays, 32, "<b>Caffeine</b> til 32w+no apnea off PP:"));
+  calculatedTexts.push(calculateTreatmentDate(dob, gestAge, remainingGestAgeDays, 34, "<b>Caffeine</b> til 34w+no apnea off PP:"));
   calculatedTexts.push(addDaysToDOB(dob, 28, "<b>Synagis</b> if O2 at least 28d after birth"));
   calculatedTexts.push(printText("<b>NEST</b> f/u Tier 2"));
   calculatedTexts.push(addDaysToDOB(dob, 30, "<b>Hep B Vac</b> @30 days"));
@@ -641,7 +641,7 @@ const printText = (text) => {
   calculatedTexts.push(calculatePostMenstrualExamDate(dob, gestAge, remainingGestAgeDays));
   calculatedTexts.push(printText("<b>ECHO:</b>"));
   calculatedTexts.push(calculateTreatmentDate(dob, gestAge, remainingGestAgeDays, 36, "&nbsp;&nbsp;&nbsp;@36w if on resp supp:"));
-  calculatedTexts.push(calculateTreatmentDate(dob, gestAge, remainingGestAgeDays, 32, "<b>Caffeine</b> til 32w+no apnea off PP:"));
+  calculatedTexts.push(calculateTreatmentDate(dob, gestAge, remainingGestAgeDays, 34, "<b>Caffeine</b> til 34w+no apnea off PP:"));
   calculatedTexts.push(addDaysToDOB(dob, 28, "<b>Synagis</b> if O2 at least 28d after birth"));
   calculatedTexts.push(printText("<b>NEST</b> f/u Tier 2"));
   calculatedTexts.push(addDaysToDOB(dob, 30, "<b>Hep B Vac</b> @30 days"));  
